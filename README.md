@@ -7,6 +7,7 @@ Simple PowerShell Script used for automatically parsing/incrementing AddOn versi
 
 ## Installing Dependencies:
 There is an included script which automatically installs the dependencies using Chocolatey. Read more about Chocolatey at https://chocolatey.org/. To run the dependency installer script, execute the following Windows Batch script.
+
 	InstallDependencies.bat
 
 ## Usage Instructions:
