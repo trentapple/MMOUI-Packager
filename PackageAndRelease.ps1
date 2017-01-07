@@ -169,3 +169,5 @@ else
 {
 	Write-Error -Message "7-Zip path in script appears to be missing or invalid. Is it installed?"
 }
+
+# Commented here
