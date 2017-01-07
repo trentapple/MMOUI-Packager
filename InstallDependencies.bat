@@ -56,3 +56,5 @@ echo there is a non-administrator setup, but is generally recommended as a last 
 echo Read more: https://chocolatey.org/install#non-administrative-install )
 
 echo ## Complete! ##
+
+echo ## Successful ##
