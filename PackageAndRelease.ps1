@@ -102,6 +102,7 @@ if ($incrementVersionNumber)
 		$newVersion | Out-Clipboard
 	}
 
+	# Create Version String
 	$newVersionWriteString = '## Version: ' + $newVersion
 
 	(get-content -ErrorAction SilentlyContinue $projectTxtFilePath) | foreach-object -ErrorAction SilentlyContinue {$_ -replace '^## Version: (.*)', $newVersionWriteString} | set-content -ErrorAction SilentlyContinue $projectTxtFilePath
