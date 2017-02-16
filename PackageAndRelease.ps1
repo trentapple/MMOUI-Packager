@@ -16,7 +16,7 @@ param (
 	[switch]$noCopyIncrementedVersionNumberToClipboard,
 	[switch]$openExplorer,
 	[switch]$uploadToEsoui,
-	[string]$compatibility = "2.6",
+	[string]$compatibility = "2.7",
 	[string]$defaultSevenZipPath = "C:\PROGRA~1\7-Zip\7z.exe",
 	[string]$esouiApiToken # *or* Environment Variable: ESOUI_API_TOKEN
 )
