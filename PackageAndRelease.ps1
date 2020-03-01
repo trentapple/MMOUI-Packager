@@ -10,7 +10,7 @@
  # 		of the "Elder Scrolls Online" folder and that it will be located directly within 
  # 		the %USERPROFILE%\Documents\ directory. Please refer to the script's parameters.
  #>
-param (
+ param (
 	[string]$projectDirName,
 	[switch]$incrementVersionNumber,
 	[switch]$noCopyIncrementedVersionNumberToClipboard,
@@ -44,7 +44,7 @@ filter Select-MatchingGroupValue($groupNum)
     }
    Select-Object -InputObject $_ -ExpandProperty Matches |
         Select-Object -ExpandProperty Groups |
-        Select-Object-Object -Index $groupNum |
+        Select-Object -Index $groupNum |
         Select-Object -ExpandProperty Value
 }
 
