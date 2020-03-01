@@ -16,7 +16,7 @@ param (
 	[switch]$noCopyIncrementedVersionNumberToClipboard,
 	[switch]$openExplorer,
 	[switch]$uploadToEsoui,
-	[string]$compatibility = "2.7",
+	[string]$compatibility = "5.3.4", # Harrowstorm (100030)
 	[string]$defaultSevenZipPath = "C:\PROGRA~1\7-Zip\7z.exe",
 	[string]$esouiApiToken # *or* Environment Variable: ESOUI_API_TOKEN
 )
@@ -42,10 +42,10 @@ filter Select-MatchingGroupValue($groupNum)
 	{
         $groupNum = 0
     }
-    select -InputObject $_ -ExpandProperty Matches |
-        select -ExpandProperty Groups |
-        select -Index $groupNum |
-        select -ExpandProperty Value
+   Select-Object -InputObject $_ -ExpandProperty Matches |
+        Select-Object -ExpandProperty Groups |
+        Select-Object-Object -Index $groupNum |
+        Select-Object -ExpandProperty Value
 }
 
 $elderScrollsOnlineAddOnPath = Join-Path $env:USERPROFILE -ChildPath "Documents" | Join-Path -ChildPath "Elder Scrolls Online" | Join-Path -ChildPath "live" | Join-Path -ChildPath "AddOns" 
@@ -62,7 +62,7 @@ $projectTxtFilePath = Join-Path $projectPath -ChildPath $projectTxtName
 
 $currentVersion = Get-Content $projectTxtFilePath -ErrorAction SilentlyContinue |
 	Select-String '^## Version: (.*)' |
-	select -First 1 |
+	Select-Object -First 1 |
 	Select-MatchingGroupValue 1
 
 Write-Host "Current Version: $currentVersion"
@@ -170,5 +170,3 @@ else
 {
 	Write-Error -Message "7-Zip path in script appears to be missing or invalid. Is it installed?"
 }
-
-# Commented here
