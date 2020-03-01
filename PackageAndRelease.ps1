@@ -65,7 +65,7 @@ $currentVersion = Get-Content $projectTxtFilePath -ErrorAction SilentlyContinue 
 	select -First 1 |
 	Select-MatchingGroupValue 1
 
-Write-Host Current Version: $currentVersion
+Write-Host "Current Version: $currentVersion"
 
 $versionTokens = $currentVersion.Split(".")
 
@@ -95,7 +95,7 @@ if ($incrementVersionNumber)
 
 	$newVersion = ([string] $major) + "." + ([string] $minor ) + "." + ([string] $patch)
 
-	Write-Host New Version (Incremented): $newVersion
+	Write-Host "New Version (Incremented): $newVersion"
 
 	if (!$noCopyIncrementedVersionNumberToClipboard)
 	{
